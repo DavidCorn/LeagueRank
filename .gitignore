@@ -1,1 +1,3 @@
 *.credential
+.DS_Store
+.idea/
