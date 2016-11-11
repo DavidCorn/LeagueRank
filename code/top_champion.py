@@ -1,10 +1,10 @@
-import urllib2
-import json
 import csv
+import json
 import os
+import urllib2
 
 from RiotCrawler import get_division
-# from config import config
+from config import config
 
 
 class TopChampion:
@@ -51,7 +51,7 @@ class TopChampion:
 
     def save_top_champions(self):
         for champion in self.top_champions:
-            file_name = '{}.csv'.format(champion['id'])
+            file_name = '../data/{}.csv'.format(champion['id'])
             if os.path.isfile(file_name):
                 with open(file_name, 'a') as csvfile:
                     writer = csv.DictWriter(csvfile, fieldnames=self.FIELD_NAMES)
@@ -131,7 +131,7 @@ def main():
         print 'starting tier: {}'.format(tier)
         for summoner_id in rank_dict:
             print 'tier: {}, summoner id: {}'.format(tier, summoner_id)
-            top_champion = TopChampion('RGAPI-04739ba6-3d13-438b-b046-940c6809d27d', summoner_id, tier, 3)
+            top_champion = TopChampion(config['key'], summoner_id, tier, 3)
             top_champion.get_top_champions()
             top_champion.save_top_champions()
             time.sleep(1)
