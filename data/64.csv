@@ -1,0 +1,4 @@
+totalSessionsPlayed,totalSessionsLost,totalSessionsWon,totalChampionKills,totalDamageDealt,totalDamageTaken,mostChampionKillsPerSession,totalMinionKills,totalDoubleKills,totalTripleKills,totalQuadraKills,totalPentaKills,totalUnrealKills,totalDeathsPerSession,totalGoldEarned,mostSpellsCast,totalTurretsKilled,totalPhysicalDamageDealt,totalMagicDamageDealt,totalFirstBlood,totalAssists,maxChampionsKilled,maxNumDeaths,label
+46,18,28,329,6050831,1314266,17,1505,27,4,0,0,0,263,539502,0,27,4184976,1284419,0,406,17,14,diamond
+66,29,37,507,7551816,1995262,20,2537,40,6,0,0,0,349,756354,0,43,5266377,1469378,0,604,20,12,challenger
+30,17,13,193,4433287,907280,13,1354,15,2,0,0,0,144,369966,0,11,3289365,649846,0,294,13,9,master

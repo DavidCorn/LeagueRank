@@ -3,6 +3,9 @@ import json
 import csv
 import os
 
+from RiotCrawler import get_division
+from config import config
+
 
 class TopChampion:
 
@@ -120,6 +123,16 @@ class TopChampion:
         pass
     pass
 
-top_champion = TopChampion('RGAPI-04739ba6-3d13-438b-b046-940c6809d27d', '70359816', 'a', 3)
-top_champion.get_top_champions()
-top_champion.save_top_champions()
+
+def main():
+    import time
+    division = get_division()
+    for tier, rank_dict in division.iteritems():
+        for summoner_id in rank_dict:
+            top_champion = TopChampion('RGAPI-04739ba6-3d13-438b-b046-940c6809d27d', summoner_id, tier, 3)
+            top_champion.get_top_champions()
+            top_champion.save_top_champions()
+            time.sleep(1)
+
+if __name__ == '__main__':
+    main()
