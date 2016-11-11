@@ -4,7 +4,7 @@ import csv
 import os
 
 from RiotCrawler import get_division
-from config import config
+# from config import config
 
 
 class TopChampion:
@@ -128,11 +128,14 @@ def main():
     import time
     division = get_division()
     for tier, rank_dict in division.iteritems():
+        print 'starting tier: {}'.format(tier)
         for summoner_id in rank_dict:
+            print 'tier: {}, summoner id: {}'.format(tier, summoner_id)
             top_champion = TopChampion('RGAPI-04739ba6-3d13-438b-b046-940c6809d27d', summoner_id, tier, 3)
             top_champion.get_top_champions()
             top_champion.save_top_champions()
             time.sleep(1)
+        print 'end tier: {}'.format(tier)
 
 if __name__ == '__main__':
     main()

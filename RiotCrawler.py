@@ -43,12 +43,12 @@ class RiotCrawler:
         entries = division_info[str(summoner_id)][0]['entries']
 
         level = self.division[tier]
-        cnt = 0
+        # cnt = 0
         for entry in entries:
             level.append(entry['playerOrTeamId'])
-            cnt += 1
-            if cnt == 3:
-                break
+            # cnt += 1
+            # if cnt == 3:
+            #     break
 
         # for l in level:
         #     print 'summoner id: {}, name: {}'.format(str(l.id), l.name)
