@@ -3,7 +3,7 @@ import json
 import os
 import urllib2
 
-from RiotCrawler import get_division
+from RiotCrawler import get_tier
 from config import config
 
 
@@ -126,8 +126,8 @@ class TopChampion:
 
 def main():
     import time
-    division = get_division()
-    for tier, rank_dict in division.iteritems():
+    tiers = get_tier()
+    for tier, rank_dict in tiers.iteritems():
         print 'starting tier: {}'.format(tier)
         for summoner_id in rank_dict:
             print 'tier: {}, summoner id: {}'.format(tier, summoner_id)
